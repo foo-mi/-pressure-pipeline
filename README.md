@@ -47,7 +47,7 @@ weekend surge, and a steady-state baseline.
 ## Run It
 
 ```bash
-python pipeline.py
+py pipeline.py
 ```
 
 Expected output:
