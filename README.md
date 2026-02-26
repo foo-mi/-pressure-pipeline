@@ -1,4 +1,4 @@
-# 🎵 Julia Wolf Streaming Analytics Pipeline
+# Julia Wolf Streaming Analytics Pipeline
 
 A lightweight data pipeline that simulates real-time music streaming ingestion
 and aggregation — built as a portfolio project demonstrating backend/data
@@ -13,15 +13,13 @@ through a stateful aggregation layer, and outputs ranked analytics — the same
 pattern used in production ad-tech and music platforms.
 
 ```
-EventProducer  ──▶  StreamProcessor  ──▶  Report + JSON Snapshot
- (synthetic        (windowed stats,        (leaderboard, deep-
-  Kafka topic)      enrichment join)        dive, throughput)
+EventProducer  -->  StreamProcessor  -->  Report + JSON Snapshot
+ (synthetic         (windowed stats,       (leaderboard, deep-
+  Kafka topic)       enrichment join)       dive, throughput)
 ```
 
-**Three simulated "waves"** model real traffic patterns:
-- 🚀 New release spike
-- 📈 Weekend surge
-- 📊 Steady-state baseline
+Three simulated "waves" model real traffic patterns: a new release spike, a
+weekend surge, and a steady-state baseline.
 
 ---
 
@@ -42,7 +40,7 @@ EventProducer  ──▶  StreamProcessor  ──▶  Report + JSON Snapshot
 ## Tech Stack
 
 - **Python 3.11+** — standard library only, zero external dependencies
-- Patterns map to production tools: `EventProducer` → Kafka, `StreamProcessor` → Flink/Spark Streaming, JSON output → S3/BigQuery sink
+- Patterns map to production tools: `EventProducer` -> Kafka, `StreamProcessor` -> Flink/Spark Streaming, JSON output -> S3/BigQuery sink
 
 ---
 
@@ -57,22 +55,22 @@ Expected output:
 Starting Julia Wolf Streaming Analytics Pipeline...
 Simulating event ingestion in 3 waves...
 
-  🚀 Wave 1 — New Release Spike   (1,200 events)... done
-  📈 Wave 2 — Weekend Surge        (2,500 events)... done
-  📊 Wave 3 — Steady State Baseline  (800 events)... done
+  Wave 1 -- New Release Spike      (1,200 events)... done
+  Wave 2 -- Weekend Surge          (2,500 events)... done
+  Wave 3 -- Steady State Baseline    (800 events)... done
 
-──────────────────────────────────────────────────────────────
-  🎵  Julia Wolf · Streaming Analytics Report
-──────────────────────────────────────────────────────────────
+--------------------------------------------------------------
+  Julia Wolf -- Streaming Analytics Report
+--------------------------------------------------------------
 
 Pipeline Stats
   Total events processed : 4,500
-  Unique tracks streamed : 8
+  Unique tracks streamed : 10
   Throughput (last 60s)  : X.XX events/sec
 
 Track Leaderboard  (all time)
-  🥇 Medicine           ██████████████████████░░░░░░░░  998 streams  complete: 85.2%  top: Apple Music
-  🥈 Falling for U      ████████████████████░░░░░░░░░░  812 streams  ...
+  1. In My Room         ██████████████████████████████  1083 streams  complete: 59.0%  top: Tidal
+  2. Kill You Off       ████████████████░░░░░░░░░░░░░░   565 streams  ...
   ...
 ```
 
