@@ -1,9 +1,7 @@
 # Julia Wolf Streaming Analytics Pipeline
 
 A lightweight data pipeline that simulates real-time music streaming ingestion
-and aggregation — built as a portfolio project demonstrating backend/data
-engineering fundamentals.
-
+and aggregation.
 ---
 
 ## What It Does
